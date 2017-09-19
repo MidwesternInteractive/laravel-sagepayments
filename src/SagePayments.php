@@ -6,6 +6,6 @@ class SagePayments
 {
     public function __construct()
     {
-        // Primary
+        //
     }
 }

@@ -19,5 +19,6 @@
   "require-dev": {
     "laravel/framework": "~5.0",
     "phpunit/phpunit": "~4.0"
-  }
+  },
+  "minimum-stability": "dev"
 }
