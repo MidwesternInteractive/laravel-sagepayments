@@ -1,36 +1,23 @@
 <?php
 
-namespace MidwesternInteractive\LaravelSagePayments;
+namespace MidwesternInteractive\Laravel;
 
 use Illuminate\Support\ServiceProvider;
+use MidwesternInteractive\Laravel\SagePayments;
 
-/**
- * Class SagePaymentsServiceProvider
- * @package MidwesternInteractive\LaravelSagePayments
- *
- * The Laravel Service Provider for LaravelSagePayments Service
- */
 class SagePaymentsServiceProvider extends ServiceProvider
 {
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
+    protected $defer = true;
+
     public function register()
     {
-        $config = __DIR__ . '/config/config.php';
-        $this->mergeConfigFrom($config, 'sagepayments');
-        $this->publishes([$config => config_path('sagepayments.php')]);
+        $this->app->singleton(SagePayments::class, function ($app) {
+            return new SagePayments();
+        });
     }
 
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
     public function provides()
     {
-        return ['sagepayments', 'MidwesternInteractive\SagePayments'];
+        return [SagePayments::class];
     }
 }
