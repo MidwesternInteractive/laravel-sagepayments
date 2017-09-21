@@ -2,6 +2,7 @@
   "name": "midwesterninteractive/laravel-sagepayments",
   "description": "Laravel SagePayments",
   "keywords": [
+    "php",
     "laravel",
     "sage",
     "payments"
