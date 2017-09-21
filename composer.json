@@ -16,8 +16,12 @@
   "authors": [
     {
       "name": "Ryan Doss",
-      "email": "rd@buildmidwestern.com"
+      "email": "rd@buildmidwestern.com",
+      "homepage": "http://midwesterninteractive.com"
     }
   ],
+  "autoload": {
+      "psr-4": { "MidwesternInteractive\\Laravel\\": "src/" }
+  },
   "minimum-stability": "dev"
 }
