@@ -27,7 +27,7 @@
   "extra": {
       "laravel": {
           "providers": [
-              "MidwesternInteractive\\LaravelKit\\LaravelKitServiceProvider"
+              "MidwesternInteractive\\Laravel\\SagePaymentsServiceProvider"
           ]
       }
   }
