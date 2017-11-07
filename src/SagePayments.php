@@ -4,8 +4,19 @@ namespace MidwesternInteractive\Laravel;
 
 class SagePayments
 {
+    /**
+     * The base URL for Sage Payments API
+     * 
+     * @var string
+     */
     static $base_url = 'https://api-cert.sagepayments.com/';
 
+    /**
+     * The primary method for requesting a response from Sage Payments API
+     * 
+     * @param  array  $request  An array of data to generate the request
+     * @return  object  An object containing the default response from Sage Payments API
+     */
     public static function request($request)
     {
         $nonce = uniqid();
@@ -44,6 +55,12 @@ class SagePayments
         return $response;
     }
 
+    /**
+     * Method for retriving a list of charges
+     * 
+     * @param  array  $body  An array of data used to generate the request
+     * @return  object  An object containing the response from self::request method
+     */
     public static function charges($body = [])
     {
         $request = [
@@ -55,6 +72,12 @@ class SagePayments
         return self::request($request);
     }
 
+    /**
+     * Method for retriving details of charges
+     * 
+     * @param  string  $reference  A string containging the reference id of the charge to retreive
+     * @return  object  An object containing the response from self::request method
+     */
     public static function details($reference)
     {
         $request = [
@@ -65,6 +88,13 @@ class SagePayments
         return self::request($request);
     }
 
+    /**
+     * Method for creating a new charge
+     * 
+     * @param  array  $body  An array of data used to generate the request
+     * @param  string  $type  The type of charge to create
+     * @return  object  An object containing the response from self::request method
+     */
     public static function create($body, $type = 'Sale')
     {
         $request = [
