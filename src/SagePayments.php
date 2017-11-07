@@ -4,6 +4,8 @@ namespace MidwesternInteractive\Laravel;
 
 class SagePayments
 {
+    private $base_url = 'https://api-cert.sagepayments.com/';
+
     public static function request($request)
     {
         $nonce = uniqid();
@@ -46,7 +48,7 @@ class SagePayments
     {
         $request = [
             'verb' => 'GET',
-            'endpoint' => 'https://api-cert.sagepayments.com/bankcard/v1/charges',
+            'endpoint' => $this->base_url . 'bankcard/v1/charges',
             'body' => $body
         ];
 
@@ -57,17 +59,17 @@ class SagePayments
     {
         $request = [
             'verb' => 'GET',
-            'endpoint' => 'https://api-cert.sagepayments.com/bankcard/v1/charges/' . $reference,
+            'endpoint' => $this->base_url . 'bankcard/v1/charges/' . $reference,
         ];
 
         return self::request($request);
     }
 
-    public static function create($body)
+    public static function create($body, $type = 'Sale')
     {
         $request = [
             'verb' => 'POST',
-            'endpoint' => 'https://api-cert.sagepayments.com/bankcard/v1/charges?type=Sale',
+            'endpoint' => $this->base_url . 'bankcard/v1/charges?type=' . $type,
             'body' => $body
         ];
 

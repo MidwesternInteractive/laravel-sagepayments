@@ -13,7 +13,7 @@ class SagePaymentsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/sagepayments.php' => config_path('sagepayments.php'),
-        ]);
+        ], 'config');
     }
 
     public function register()
