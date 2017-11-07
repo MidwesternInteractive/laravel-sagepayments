@@ -4,7 +4,7 @@ namespace MidwesternInteractive\Laravel;
 
 class SagePayments
 {
-    private $base_url = 'https://api-cert.sagepayments.com/';
+    static $base_url = 'https://api-cert.sagepayments.com/';
 
     public static function request($request)
     {
@@ -48,7 +48,7 @@ class SagePayments
     {
         $request = [
             'verb' => 'GET',
-            'endpoint' => $this->base_url . 'bankcard/v1/charges',
+            'endpoint' => self::$base_url . 'bankcard/v1/charges',
             'body' => $body
         ];
 
@@ -59,7 +59,7 @@ class SagePayments
     {
         $request = [
             'verb' => 'GET',
-            'endpoint' => $this->base_url . 'bankcard/v1/charges/' . $reference,
+            'endpoint' => self::$base_url . 'bankcard/v1/charges/' . $reference,
         ];
 
         return self::request($request);
@@ -69,7 +69,7 @@ class SagePayments
     {
         $request = [
             'verb' => 'POST',
-            'endpoint' => $this->base_url . 'bankcard/v1/charges?type=' . $type,
+            'endpoint' => self::$base_url . 'bankcard/v1/charges?type=' . $type,
             'body' => $body
         ];
 
