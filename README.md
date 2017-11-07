@@ -33,7 +33,7 @@ If you're on laravel 5.5 the service provider will be automatially loaded, if no
 ],
 ```
 
-## Usage
+# Usage
 Use in class
 ```php
 use MidwesternInteractive\Laravel\SagePayments;
@@ -84,7 +84,7 @@ Utilizes `get_charges_detail` for more information on available parameters visit
 
 ```php
 // Charge ID
-$reference = 'F9KHIviF70';
+$reference = '[charge-reference-id]';
 
 $response = SagePayments::details($reference);
 ```
