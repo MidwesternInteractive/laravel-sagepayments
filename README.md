@@ -16,6 +16,7 @@ $ composer require midwesterninteractive/laravel-sagepayments
 $ php artisan vendor:publish --tag=config
 ```
 
+## Configuration
 You may modify the config file that is published `config/sagepayments.php` and provide the default options or add the following to your `.env` file:
 ```
 # Merchant/Client
@@ -26,7 +27,11 @@ SAGE_MERCH_KEY=[sage-client-key]
 SAGE_APP_ID=[sage-app-id]
 SAGE_APP_KEY=[sage-app-key]
 ```
+You'll need to get the Sage Merch creds from your client or login to your Sage Portal. You may also request that Sage set up a test client for development.
 
+For your Sage App creds you'll need to login to your [developer account](https://developer.sagepayments.com/) and grab them from your exisiting application or create a new one.
+
+## Service Provider
 If you're on laravel 5.5 the service provider will be automatially loaded, if not, add to your `config/app.php` providers
 ```php
 'providers' => [
