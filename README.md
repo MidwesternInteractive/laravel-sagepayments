@@ -4,6 +4,8 @@ PHP SDK for working with basic Sage Payment Bankcard methods.
 For more information visit [Sage Payments](https://developer.sagepayments.com/bankcard/apis)
 
   - [Installation](#installation)
+    - [Configuration](#configuration)
+    - [Service Provider](#service-provider)
   - [Usage](#usage)
     - [Create Charge](#create-charge)
     - [Return Charges](#return-charges)
